@@ -179,7 +179,7 @@ export class Board {
         if (this.valid(new_p)) {
             this.piece.move(new_p);
         } else {
-            if (this.piece.y === 0) {
+            if (this.piece.y <= 0) {
                 // Game over
                 return false;
             }
