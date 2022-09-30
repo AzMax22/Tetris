@@ -15,6 +15,10 @@ let accountValues = {
     level: 0
 }
 
+
+let game = false;
+
+
 // Проксирование доступа к свойствам accountValues
 let account = new Proxy(accountValues, {
     set: (target, key, value) => {
@@ -35,6 +39,7 @@ function resetGame() {
 }
 
 function play() {
+    game = true
     resetGame();
 
     animate();
@@ -74,6 +79,7 @@ function animate(now = 0) {
         if (!board.drop_piece()) {
             gameOver(requestAnimationFrame(animate), board.ctx);
             addScore(localStorage.getItem('username'), document.getElementById('score').textContent);
+            game = false
             return;
         }
     }
@@ -98,6 +104,8 @@ document.addEventListener('keydown', event => {
     if (moves[event.keyCode]) {
         // отмена действий по умолчанию
         event.preventDefault();
+
+        if (game=== false) return;
 
         // получение новых координат фигурки
         let p = moves[event.keyCode](board.piece);
