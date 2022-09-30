@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Лаб 1. Тетрис</title>
+
+    <style>
+        body { width: 40em; margin: 0 auto;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- Скрипты -->
+    <script type="module" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/player_data.js"></script>
+
+</head>
+
+<body bgcolor="#A0BEC4" onload="loadName()" >
+    <h1 align="center">Тетрис</h1>
+
+    <div class="grid">
+
+        <div class="left-column">
+            <div>
+                <font size="5">
+                    <b>Игрок: <span id="name_player">Undefine</span></b> <br>
+                    <b>Счет: <span id="score">0</span></b> <br>
+                    <b>Уровень : <span id="level">1</span></b>
+                </font>
+                <br>
+                <br>
+                <canvas id="next_fig" class="next_fig"></canvas>
+            </div>
+
+            <button onclick="play()" class="button">Играть</button>
+        </div>
+
+        <canvas id="board"  class="game-board"></canvas>
+
+    </div>
+</body>
+</html>
