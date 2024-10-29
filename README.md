@@ -1,3 +1,3 @@
 # Tetris
 
-Ссылка: https://leo-d-neo.github.io/Tetris/
+Ссылка: https://azmax22.github.io/Tetris/
